@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Scriript DOM Console, confirm, alert, write</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../app.css">
+</head>
+
+<body>
+    <div class="jsApp">
+        <div class="text-center">
+            <h2 class="border-bottom text-white py-5 mb-5 text-center">Java Scriript DOM Console,
+                confirm, alert, write
+            </h2>
+
+            <h1 class="text-info" id="appDisplay"> </h1>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let appDisplay = document.getElementById('appDisplay')
+            let write = ''
+            alert("Enter App No!")
+            let a = prompt(" App No default added you can change or not  ", "009786")
+            a = Number.parseInt(a)
+            if (a) {
+                // alert("You Enter Type of " + (typeof a))
+                write = confirm("Are You Sure This No is Fine for Your App No")
+            }
+            if (write) {
+                appDisplay.innerHTML = a;
+                console.log("display", appDisplay)
+            } else {
+                let response = write.innerHTML = "Please Try Again...!"
+                appDisplay.innerHTML = `  ${response}`;
+                console.info("tey again");
+                alert("Try Again....!!")
+            }
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
